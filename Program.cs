@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using System;
 
 namespace SeminarieEnquete
 {
@@ -10,10 +11,14 @@ namespace SeminarieEnquete
 			BuildWebHost(args).Run();
 		}
 
-		public static IWebHost BuildWebHost(string[] args) =>
-			WebHost.CreateDefaultBuilder(args)
+		public static IWebHost BuildWebHost(string[] args)
+		{
+			var url = $"http://*:{Environment.GetEnvironmentVariable("PORT")}/";
+
+			return WebHost.CreateDefaultBuilder(args)
 				.UseStartup<Startup>()
-				.UseUrls("http://192.168.0.151:5656")
+				.UseUrls(url)
 				.Build();
+		}
 	}
 }
