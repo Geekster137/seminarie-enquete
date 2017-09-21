@@ -14,7 +14,6 @@ C:\Users\joren\Documents\Websites\SeminarieEnquete\SeminarieEnquete\obj\Debug\ne
 C:\Users\joren\Documents\Websites\SeminarieEnquete\SeminarieEnquete\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
 C:\Users\joren\Documents\Websites\SeminarieEnquete\obj\Debug\netcoreapp2.0\SeminarieEnquete.csprojResolveAssemblyReference.cache
 C:\Users\joren\Documents\Websites\SeminarieEnquete\obj\Debug\netcoreapp2.0\SeminarieEnquete.csproj.CoreCompileInputs.cache
-C:\Users\joren\Documents\Websites\SeminarieEnquete\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
 C:\Users\joren\Documents\Websites\SeminarieEnquete\obj\Debug\netcoreapp2.0\SeminarieEnquete.AssemblyInfoInputs.cache
 C:\Users\joren\Documents\Websites\SeminarieEnquete\obj\Debug\netcoreapp2.0\SeminarieEnquete.AssemblyInfo.cs
 C:\Users\joren\Documents\Websites\SeminarieEnquete\obj\Debug\netcoreapp2.0\SeminarieEnquete.dll

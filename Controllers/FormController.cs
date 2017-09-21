@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MongoConnection;
+using MongoDB.Driver;
 using SeminarieEnquete.Models;
 using System.Threading.Tasks;
 
@@ -8,20 +8,20 @@ namespace SeminarieEnquete.Controllers
 	[Route("api/forms")]
 	public class FormController : Controller
 	{
-		private MongoCollection<Form> _formsColl = new MongoCollection<Form>("forms");
+		private IMongoCollection<Form> _formsColl = DbConnection.Db.GetCollection<Form>("forms");
 
 		[HttpGet]
 		public async Task<IActionResult> Get()
 		{
-			var forms = await _formsColl.FindAll();
+			var forms = await _formsColl.Find(f => true).FirstAsync();
 
 			return Json(forms);
 		}
 
 		[HttpPost]
-		public void PostForm([FromBody]Form data)
+		public async Task PostForm([FromBody]Form data)
 		{
-			_formsColl.InsertOne(data);
+			await _formsColl.InsertOneAsync(data);
 		}
 	}
 }

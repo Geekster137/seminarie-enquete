@@ -1,12 +1,16 @@
-﻿using MongoConnection;
-using MongoDB.Bson.Serialization.Attributes;
+﻿using MongoDB.Bson.Serialization.Attributes;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
 namespace SeminarieEnquete.Models
 {
-	public class Form : MongoModel
+	public class Form
 	{
+		[BsonElement("_id")]
+		[BsonId]
+		[BsonRepresentation(MongoDB.Bson.BsonType.ObjectId)]
+		public string Id { get; set; }
+
 		[BsonElement("gender")]
 		[BsonRepresentation(MongoDB.Bson.BsonType.String)]
 		public Gender Gender { get; set; }

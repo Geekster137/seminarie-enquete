@@ -13,7 +13,6 @@ namespace SeminarieEnquete
 
 		public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 		{
-			MongoConnection.MongoConnection.InitializeConnection("mongodb://192.168.0.151:27017", "seminarie_enquete");
 			app.UseMvc();
 			app.UseStaticFiles();
 		}
