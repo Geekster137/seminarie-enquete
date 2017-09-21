@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>Seminarie Enquete - Admin</title>
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+		<link rel="stylesheet" href="~/admin.css">
+
+		<script type="text/javascript" src="https://unpkg.com/vue"></script>
+	</head>
+
+	<body>
+		<div class="container-fluid pt-2">
+			<h1>Seminarie Enquete</h1>
+
+			<div id="app">
+				<table class="mt-4">
+					<tr>
+						<th>Geslacht</th>
+						<th>Maakt Gebruik Van Sociale Media?</th>
+						<th>Platformen</th>
+						<th>Hoe Vaak?</th>
+						<th>Waarvoor?</th>
+						<th>Vindt Social Media Nodig?</th>
+						<th>Mening Over Sexting</th>
+						<th>Slachtoffer Van Cyberpesten</th>
+					</tr>
+
+					<tr v-for="f of forms">
+						<td>{{ f.gender }}</td>
+						<td>{{ f.usesSocialMedia ? 'Ja' : 'Nee' }}</td>
+						<td>{{ f.platforms.join(', ') }}</td>
+						<td>{{ f.howOften }}</td>
+						<td>{{ f.whatFor.join(', ') }}</td>
+
+						<td v-if="f.isNeccessary == null">//////</td>
+						<td v-if="f.isNeccessary != null">{{ f.isNeccessary ? 'Ja' : 'Nee' }}</td>
+
+						<td v-if="f.sextingGood == null">//////</td>
+						<td v-if="f.sextingGood != null">{{ f.sextingGood ? 'Goed' : 'Slecht' }}</td>
+
+						<td v-if="f.hasBeenCyberbullied == null">//////</td>
+						<td v-if="f.hasBeenCyberbullied != null">{{ f.hasBeenCyberbullied ? 'Ja' : 'Nee' }}</td>
+					</tr>
+				</table>
+			</div>
+
+			<script type="text/javascript" src="~/admin.js"></script>
+		</div>
+	</body>
+</html>

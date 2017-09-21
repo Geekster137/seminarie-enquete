@@ -1,0 +1,14 @@
+﻿h1 {
+	font-weight: lighter;
+	text-transform: uppercase;
+}
+
+th {
+	text-transform: uppercase;
+}
+
+td, th {
+	border: 1px solid #3d3d3d;
+	padding: 5px;
+	font-size: 14px;
+}
