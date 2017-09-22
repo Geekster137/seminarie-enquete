@@ -50,6 +50,8 @@
 			}
 
 			this.postForm(form);
+
+			location.href = '/Finished';
 		},
 
 		formIsValid(form) {

@@ -9,7 +9,7 @@ namespace SeminarieEnquete.Controllers
 		[Route("")]
 		public async Task<IActionResult> Admin([FromQuery]string password)
 		{
-			if (password != "test")
+			if (password != "beans")
 				return View("Error");
 
 			return View("Index");

@@ -18,7 +18,47 @@
 			<h1>Seminarie Enquete</h1>
 
 			<div id="app">
-				<table class="mt-4">
+				<h5 class="mt-4">Filters:</h5>
+
+				<div class="row">
+					<div class="form-group col-3">
+						<h6>Geslacht:</h6>
+
+						<input type="radio" value="all" name="genderFilter" v-model="filters.gender" checked v-on:change="filterChange">
+						<label for="genderFilter">Alle</label>
+
+						<br>
+
+						<input type="radio" value="male" name="genderFilter" v-model="filters.gender" v-on:change="filterChange">
+						<label for="genderFilter">Mannen</label>
+
+						<br>
+
+						<input type="radio" value="female" name="genderFilter" v-model="filters.gender" v-on:change="filterChange">
+						<label for="genderFilter">Vrouwen</label>
+					</div>
+
+					<div class="form-group col-3">
+						<h6>Gebruikt Sociale Media:</h6>
+
+						<input type="radio" v-bind:value="true" name="usesSMFilter" v-model="filters.usesSocialMedia" checked v-on:change="filterChange">
+						<label for="usesSMFilter">Ja</label>
+
+						<br>
+
+						<input type="radio" v-bind:value="false" name="usesSMFilter" v-model="filters.usesSocialMedia" checked v-on:change="filterChange">
+						<label for="usesSMFilter">Nee</label>
+
+						<br>
+
+						<input type="radio" v-bind:value="null" name="usesSMFilter" v-model="filters.usesSocialMedia" checked v-on:change="filterChange">
+						<label for="usesSMFilter">Beide</label>
+					</div>
+				</div>
+
+				<hr>
+
+				<table class="mt-4" v-if="filteredForms.length > 0">
 					<tr>
 						<th>Geslacht</th>
 						<th>Maakt Gebruik Van Sociale Media?</th>
@@ -30,7 +70,7 @@
 						<th>Slachtoffer Van Cyberpesten</th>
 					</tr>
 
-					<tr v-for="f of forms">
+					<tr v-for="f of filteredForms">
 						<td>{{ f.gender }}</td>
 						<td>{{ f.usesSocialMedia ? 'Ja' : 'Nee' }}</td>
 						<td>{{ f.platforms.join(', ') }}</td>
