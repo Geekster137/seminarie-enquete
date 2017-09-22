@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "2615cef1e670c9efaf0252cfbe7fcaee3bf196d8"
+    "signature": "4ce532ef66234382dbe19d88318e258fd9d82f84"
   },
   "compilationOptions": {
     "defines": [
@@ -25,7 +25,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.All": "2.0.0-preview2-final",
           "Microsoft.NETCore.App": "2.0.0-preview2-25407-01",
-          "MongoConnection": "1.0.0"
+          "MongoDB.Driver": "2.4.4"
         },
         "runtime": {
           "SeminarieEnquete.dll": {}
@@ -2418,19 +2418,7 @@
           "ref/netstandard2.0/Microsoft.Win32.Registry.dll": {}
         }
       },
-      "MongoConnection/1.0.0": {
-        "dependencies": {
-          "Microsoft.NETCore.App": "2.0.0-preview2-25407-01",
-          "MongoDB.Driver": "2.4.3"
-        },
-        "runtime": {
-          "lib/netcoreapp1.1/MongoConnection.dll": {}
-        },
-        "compile": {
-          "lib/netcoreapp1.1/MongoConnection.dll": {}
-        }
-      },
-      "MongoDB.Bson/2.4.3": {
+      "MongoDB.Bson/2.4.4": {
         "dependencies": {
           "NETStandard.Library": "2.0.0-preview2-25401-01",
           "System.Collections.NonGeneric": "4.3.0",
@@ -2445,10 +2433,10 @@
           "lib/netstandard1.5/MongoDB.Bson.dll": {}
         }
       },
-      "MongoDB.Driver/2.4.3": {
+      "MongoDB.Driver/2.4.4": {
         "dependencies": {
-          "MongoDB.Bson": "2.4.3",
-          "MongoDB.Driver.Core": "2.4.3",
+          "MongoDB.Bson": "2.4.4",
+          "MongoDB.Driver.Core": "2.4.4",
           "NETStandard.Library": "2.0.0-preview2-25401-01",
           "System.Linq.Queryable": "4.0.1"
         },
@@ -2459,9 +2447,9 @@
           "lib/netstandard1.5/MongoDB.Driver.dll": {}
         }
       },
-      "MongoDB.Driver.Core/2.4.3": {
+      "MongoDB.Driver.Core/2.4.4": {
         "dependencies": {
-          "MongoDB.Bson": "2.4.3",
+          "MongoDB.Bson": "2.4.4",
           "NETStandard.Library": "2.0.0-preview2-25401-01",
           "System.Collections.Specialized": "4.3.0",
           "System.Diagnostics.TraceSource": "4.3.0",
@@ -5548,33 +5536,26 @@
       "path": "microsoft.win32.registry/4.4.0-preview2-25405-01",
       "hashPath": "microsoft.win32.registry.4.4.0-preview2-25405-01.nupkg.sha512"
     },
-    "MongoConnection/1.0.0": {
+    "MongoDB.Bson/2.4.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ZrsT7jszbDNonwAVpo+yyrlwAkYBln/yRcXs7xQLNqVjrq21Ip3ADL5hWg9Qe9yOgBas7EOUz33HvTcE9W2Fcg==",
-      "path": "mongoconnection/1.0.0",
-      "hashPath": "mongoconnection.1.0.0.nupkg.sha512"
+      "sha512": "sha512-BavFx+rmR5k+dx14tC23KTyjCPkASvTQ1WxzLYHt2w3Mkqel5lJV6+gWzWV3DX9hnTewCC09OKqNqckiJl4sIw==",
+      "path": "mongodb.bson/2.4.4",
+      "hashPath": "mongodb.bson.2.4.4.nupkg.sha512"
     },
-    "MongoDB.Bson/2.4.3": {
+    "MongoDB.Driver/2.4.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-frj9UMKRW7EwYSqqD5x1uO61Rrm50dMdbjz19bKhNtG31iEZceoURcEBSsjvlrm2OotLwVKmEF4f64INwb+HzQ==",
-      "path": "mongodb.bson/2.4.3",
-      "hashPath": "mongodb.bson.2.4.3.nupkg.sha512"
+      "sha512": "sha512-sG+4H7732fG3XGCXWsxwuUQBvnbVO/bzzxBVZHtHa5R2UDsRXR7BfQxAS/d9Qk8FlNDHOjTjz+GzWTgzjgopQw==",
+      "path": "mongodb.driver/2.4.4",
+      "hashPath": "mongodb.driver.2.4.4.nupkg.sha512"
     },
-    "MongoDB.Driver/2.4.3": {
+    "MongoDB.Driver.Core/2.4.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-jMqO2K/POx3xjFrWOc7U4nTXc0+F7/KuBXFt5+Rr0qnOMsiZy+1YDoZ+J0AASfNaNRZ6BZafXq93Q3rDWZ5KUQ==",
-      "path": "mongodb.driver/2.4.3",
-      "hashPath": "mongodb.driver.2.4.3.nupkg.sha512"
-    },
-    "MongoDB.Driver.Core/2.4.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-h87ILAszZ1HoHZAqrdYi1eLfC9dlQJxDweWSu9gcIlgW6FtPGxf0pca+YjXSBmoYSvW1PnAkzygNw/z60lqyjg==",
-      "path": "mongodb.driver.core/2.4.3",
-      "hashPath": "mongodb.driver.core.2.4.3.nupkg.sha512"
+      "sha512": "sha512-fVjXuQE5Qe2P38xz9wz5V0QhT54+ZT78/JUKMMbIXOKYVFgkzEOE7UU6ZsbC/AbR4lwGIpRQZoiv7wW3rJb3xQ==",
+      "path": "mongodb.driver.core/2.4.4",
+      "hashPath": "mongodb.driver.core.2.4.4.nupkg.sha512"
     },
     "Newtonsoft.Json/10.0.1": {
       "type": "package",

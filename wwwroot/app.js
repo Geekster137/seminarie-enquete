@@ -70,7 +70,7 @@
 			const data = JSON.stringify(form);
 
 			const xhr = new XMLHttpRequest();
-			xhr.open('POST', 'http://192.168.0.151:5656/api/forms');
+			xhr.open('POST', '/api/forms');
 			xhr.setRequestHeader('Content-Type', 'application/json');
 			xhr.send(data);
 		}

@@ -14074,9 +14074,6 @@
   },
   "project": {
     "version": "1.0.0",
-    "restoreSettings": {
-      "hideWarningsAndErrors": true
-    },
     "restore": {
       "projectUniqueName": "C:\\Users\\joren\\Documents\\Websites\\SeminarieEnquete\\SeminarieEnquete.csproj",
       "projectName": "SeminarieEnquete",
@@ -14111,10 +14108,6 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "MongoDB.Driver": {
-            "target": "Package",
-            "version": "2.4.4"
-          },
           "Microsoft.NETCore.App": {
             "target": "Package",
             "version": "2.0.0-preview2-25407-01",
@@ -14123,6 +14116,10 @@
           "Microsoft.AspNetCore.All": {
             "target": "Package",
             "version": "2.0.0-preview2-final"
+          },
+          "MongoDB.Driver": {
+            "target": "Package",
+            "version": "2.4.4"
           }
         },
         "imports": [
