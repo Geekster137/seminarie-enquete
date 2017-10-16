@@ -6,30 +6,34 @@
 		usesSocialmedia: true,
 		platforms: [],
 		otherPlatform: '',
+		otherPlatformSelected: false,
 		howOften: '1x per week',
 		whatFor: [],
 		otherReason: '',
+		otherReasonSelected: false,
 		isNeccessary: true,
 		sextingGood: true,
 		hasBeenCyberBullied: true,
 		error: {
 			hasError: false,
 			reason: ''
-		}
+		},
+		filledIn: false
+	},
+
+	mounted() {
+		if (!!window.localStorage.getItem('FormFilledIn'))
+			this.filledIn = true;
 	},
 
 	methods: {
-		otherPlatformChange() {
-			let i = this.platforms.indexOf(this.otherPlatform);
-			this.platforms.splice(i, 1);
-		},
-
-		otherReasonChange() {
-			let i = this.whatFor.indexOf(this.otherReason);
-			this.whatFor.splice(i, 1);
-		},
-
 		submitForm() {
+			if (this.otherPlatformSelected && this.otherPlatform != '')
+				this.platforms.push(this.otherPlatform);
+
+			if (this.otherReasonSelected && this.otherReason != '')
+				this.whatFor.push(this.otherReason);
+
 			const form = {
 				gender: this.gender,
 				usesSocialMedia: this.usesSocialmedia,
@@ -50,8 +54,8 @@
 			}
 
 			this.postForm(form);
-
-			location.href = '/Finished';
+			window.localStorage.setItem('FormFilledIn', 'true');
+			this.filledIn = true;
 		},
 
 		formIsValid(form) {

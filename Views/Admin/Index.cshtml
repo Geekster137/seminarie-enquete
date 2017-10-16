@@ -73,18 +73,18 @@
 					<tr v-for="f of filteredForms">
 						<td>{{ f.gender }}</td>
 						<td>{{ f.usesSocialMedia ? 'Ja' : 'Nee' }}</td>
-						<td>{{ f.platforms.join(', ') }}</td>
-						<td>{{ f.howOften }}</td>
-						<td>{{ f.whatFor.join(', ') }}</td>
+						<td>{{ f.usesSocialMedia ? f.platforms.join(', ') : '//////' }}</td>
+						<td>{{ f.usesSocialMedia ? f.howOften : '//////' }}</td>
+						<td>{{ f.usesSocialMedia ? f.whatFor.join(', ') : '//////' }}</td>
 
-						<td v-if="f.isNeccessary == null">//////</td>
-						<td v-if="f.isNeccessary != null">{{ f.isNeccessary ? 'Ja' : 'Nee' }}</td>
+						<td v-if="f.isNeccessary == null || !f.usesSocialMedia">//////</td>
+						<td v-if="f.isNeccessary != null && f.usesSocialMedia">{{ f.isNeccessary ? 'Ja' : 'Nee' }}</td>
 
-						<td v-if="f.sextingGood == null">//////</td>
-						<td v-if="f.sextingGood != null">{{ f.sextingGood ? 'Goed' : 'Slecht' }}</td>
+						<td v-if="f.sextingGood == null || !f.usesSocialMedia">//////</td>
+						<td v-if="f.sextingGood != null && f.usesSocialMedia">{{ f.sextingGood ? 'Goed' : 'Slecht' }}</td>
 
-						<td v-if="f.hasBeenCyberbullied == null">//////</td>
-						<td v-if="f.hasBeenCyberbullied != null">{{ f.hasBeenCyberbullied ? 'Ja' : 'Nee' }}</td>
+						<td v-if="f.hasBeenCyberbullied == null || !f.usesSocialMedia">//////</td>
+						<td v-if="f.hasBeenCyberbullied != null && f.usesSocialMedia">{{ f.hasBeenCyberbullied ? 'Ja' : 'Nee' }}</td>
 					</tr>
 				</table>
 			</div>

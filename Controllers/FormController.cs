@@ -9,7 +9,6 @@ namespace SeminarieEnquete.Controllers
 	public class FormController : Controller
 	{
 		private IMongoCollection<Form> _formsColl = DbConnection.Db.GetCollection<Form>("forms");
-		private IMongoCollection<DbIp> _ipColl = DbConnection.Db.GetCollection<DbIp>("ips");
 
 		[HttpGet]
 		public async Task<IActionResult> Get()
@@ -23,11 +22,6 @@ namespace SeminarieEnquete.Controllers
 		public async Task PostForm([FromBody]Form data)
 		{
 			await _formsColl.InsertOneAsync(data);
-
-			var remoteIp = HttpContext.Connection.RemoteIpAddress;
-			var ipToInsert = new DbIp { Id = remoteIp.ToString() };
-
-			await _ipColl.InsertOneAsync(ipToInsert);
 		}
 	}
 }

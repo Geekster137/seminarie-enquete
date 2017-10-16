@@ -86,6 +86,21 @@ button:hover {
 	margin-bottom: 20px;
 }
 
+#error {
+	margin-top: 20px;
+	background-color: rgba(220, 4, 4, 0.57);
+	color: #fff;
+	padding: 10px;
+	border: 1px solid #d83c3c;
+	border-radius: 5px;
+	width: 100%;
+}
+
+#error h6 {
+	font-weight: lighter;
+	margin: 0;
+}
+
 @media screen and (min-width: 768px) {
 	body {
 		background-color: #f3f3f3;
@@ -102,5 +117,9 @@ button:hover {
 
 	h3 {
 		text-align: left !important;
+	}
+
+	#error {
+		width: 30%;
 	}
 }

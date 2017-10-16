@@ -18,7 +18,7 @@
 			<h3 class="text-uppercase mt-3">Sociale Media Enquete</h3>
 
 			<div id="app">
-				<form class="mt-3 ml-2 mr-2">
+				<form class="mt-3 ml-2 mr-2" v-if="!filledIn">
 					<div class="form-group">
 						<h5>Wat is je geslacht?</h5>
 
@@ -72,9 +72,9 @@
 
 								<br>
 
-								<input type="checkbox" name="other" v-bind:value="otherPlatform" v-model="platforms">
+								<input type="checkbox" name="other" v-model="otherPlatformSelected">
 								<label for="other"><span></span> Andere...</label>
-								<input type="text" class="ml-2" placeholder="Welke?" v-model="otherPlatform" v-on:change="otherPlatformChange">
+								<input type="text" class="ml-2" placeholder="Welke?" v-model="otherPlatform">
 							</div>
 						</div>
 
@@ -126,14 +126,14 @@
 
 								<br>
 
-								<input type="checkbox" name="otherReason" v-bind:value="otherReason" v-model="whatFor">
+								<input type="checkbox" name="otherReason" v-model="otherReasonSelected">
 								<label for="other"><span></span> Andere...</label>
-								<input type="text" class="ml-2" placeholder="Welke?" v-model="otherReason" v-on:change="otherReasonChange">
+								<input type="text" class="ml-2" placeholder="Welke?" v-model="otherReason">
 							</div>
 						</div>
 
 						<div class="form-group">
-							<h5>Vindt je social media nodig of kan je ook zonder leven?</h5>
+							<h5>Vindt je social media nodig?</h5>
 
 							<div class="input">
 								<input type="radio" name="neccessary" v-bind:value="true" v-model="isNeccessary" checked>
@@ -188,10 +188,18 @@
 								<label for="cyberbullying"><span></span> Wil Ik Niet Zeggen</label>
 							</div>
 						</div>
+					</div>
 
-						<button type="button" v-on:click="submitForm">Klaar</button>
+					<button type="button" v-on:click="submitForm">Klaar</button>
+
+					<div id="error" v-if="error.hasError">
+						<h6>{{ error.reason }}</h6>
 					</div>
 				</form>
+
+				<div v-if="filledIn">
+					<h4>Bedankt Voor Onze Enquete In Te Vullen</h4>
+				</div>
 			</div>
 		</div>
 
