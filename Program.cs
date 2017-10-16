@@ -18,7 +18,7 @@ namespace SeminarieEnquete
 
 			return WebHost.CreateDefaultBuilder(args)
 				.UseStartup<Startup>()
-				.UseUrls(devurl)
+				.UseUrls(url)
 				.Build();
 		}
 	}
